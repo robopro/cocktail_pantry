@@ -1,0 +1,72 @@
+.expandable-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 24px;
+  border: 0px solid transparent;
+  border-radius: var(--border-radius);
+  transition:
+    width 200ms ease-in-out,
+    border 200ms ease-in-out;
+}
+
+.expandable-input-container.expanded {
+  width: 200px;
+  border: 1px solid var(--border-color);
+  background-color: var(--primary-color);
+}
+
+.expandable-input-container:focus-within {
+  outline: 5px auto Highlight;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.expandable-input-container * {
+  color: var(--font-color);
+}
+
+.expandable-input {
+  background-color: transparent;
+  border-style: none;
+  width: 0px;
+}
+
+.expandable-input:focus {
+  outline: none;
+}
+
+.expandable-input.expanded {
+  width: 100%;
+}
+
+.expandable-input-list {
+  list-style-type: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 28px;
+  margin: 0;
+  border-radius: var(--border-radius);
+  color: transparent;
+  overflow-y: hidden;
+  max-height: 0px;
+  transition: max-height 0ms;
+}
+
+.expandable-input-list.expanded {
+  background-color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  padding: 5px 5px 5px 25px;
+  color: var(--font-color);
+  overflow-y: auto;
+  max-height: 200px;
+  animation: hide-scroll 1.2s backwards;
+  transition: max-height 200ms ease-in-out;
+}
+
+@keyframes hide-scroll {
+  from,
+  to {
+    overflow: hidden;
+  }
+}

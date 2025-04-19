@@ -4,10 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cocktail Pantry</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./src/images/local_bar_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+    />
     <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=filter_list,local_bar,open_in_new,search"
+    />
   </head>
   <body>
-    <div id="root"></div>
+    <header>
+      <h1><span class="material-symbols-outlined"> local_bar </span>Cocktail Pantry</h1>
+      <div class="search">
+        <expandable-input id="cocktail-search" placeholder="Search Cocktails">
+          <span slot="expandable-input-icon" class="material-symbols-outlined"> search </span>
+        </expandable-input>
+        <button class="filter-button" type="button" title="Show ingredients">
+          <span class="material-symbols-outlined"> filter_list </span>
+        </button>
+      </div>
+    </header>
+    <section class="filters">
+      <h2>Filter by</h2>
+      <div>
+        <h3>Categories</h3>
+        <ol class="category-list"></ol>
+      </div>
+      <div>
+        <div class="ingredients-header">
+          <h3>Ingredients</h3>
+          <div>
+            <span class="checkbox"><input id="strict-ingredient-filter" type="checkbox" /></span
+            ><label for="strict-ingredient-filter">Strict filtering</label>
+          </div>
+        </div>
+        <ol class="ingredient-list"></ol>
+      </div>
+    </section>
+    <section>
+      <h2>Cocktails</h2>
+      <ol class="cocktail-list"></ol>
+    </section>
     <script src="src/app.js" type="module"></script>
   </body>
 </html>

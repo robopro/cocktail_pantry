@@ -1,0 +1,41 @@
+a:visited {
+  color: var(--heading-color);
+}
+
+h4,
+h5 {
+  margin: 0;
+  color: var(--heading-color);
+}
+
+ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cocktail-card-container {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 400px;
+}
+
+.cocktail-card-header {
+  display: grid;
+  grid-template-areas:
+    "name link"
+    "category category";
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.cocktail-card-category {
+  font-size: small;
+}
+
+.hide {
+  display: none;
+}
